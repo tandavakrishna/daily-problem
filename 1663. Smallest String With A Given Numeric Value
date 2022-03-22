@@ -1,0 +1,20 @@
+string getSmallestString(int n, int k) {
+        string s="";
+        int temp;
+        for(int i=n-1;i>=0;i--)
+        {
+            int temp=k-i;
+            if(temp>=26)
+            {
+                s+="z";
+                k-=26;
+            }
+            else
+            {
+                s+=96+temp;
+                k-=temp;
+            }
+        }
+        reverse(s.begin(),s.end());
+        return s;
+    }
